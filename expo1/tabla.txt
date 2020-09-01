@@ -1,0 +1,28 @@
+create table customers(
+    i_d number(2),
+    name varchar2(20),
+    age number(8),
+    address varchar2(20),
+    salary number(28)
+);
+
+insert into customers values(1,'Ramesh',32,'Ahmedabad',2000);
+insert into customers values(2,'Khilan',25,'Delhi',1500);
+insert into customers values(3,'kaushik',23,'Kota',2000);
+insert into customers values(4,'Chaitali',25,'Mumbai',6500);
+insert into customers values(5,'Hardik',27,'Bhopal',8500);
+insert into customers values(6,'Komal',22,'MP',4500);
+
+
+-- SELECCION VALORES DE UNA TABLA Y ALMACENA EN UNA VARIBLE
+set serveroutput on;
+
+DECLARE
+  customers1 customers.name%TYPE;
+BEGIN
+
+  SELECT name INTO customers1
+  FROM customers where i_d = 1;
+  dbms_output.put_line(customers1 );
+END;
+/
