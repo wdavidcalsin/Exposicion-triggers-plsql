@@ -1,0 +1,21 @@
+-- PDB3 usario:una1
+
+create or replace trigger tr_actualizar_empleados
+  before update
+  on empleados
+  for each row
+ begin
+  if updating('documento') then
+   insert into controlCambios values(user,sysdate, :old.documento, :new.documento);
+  end if;
+  if updating('nombre') then
+   insert into controlCambios values(user,sysdate, :old.nombre, :new.nombre);
+  end if;
+  if updating('domicilio') then
+   insert into controlCambios values(user,sysdate, :old.domicilio, :new.domicilio);
+  end if;
+  if updating('seccion') then
+   insert into controlCambios values(user,sysdate, :old.seccion, :new.seccion);
+  end if;
+ end tr_actualizar_empleados;
+ /

@@ -12,4 +12,13 @@ BEGIN
    dbms_output.put_line('New salary: ' || :NEW.salary); 
    dbms_output.put_line('Salary difference: ' || sal_diff); 
 END; 
-/ 
+/
+
+-- INSERTANDO DESPUES DE CREAR EL TRIGGER
+INSERT INTO CUSTOMERS (i_d,NAME,AGE,ADDRESS,SALARY) 
+VALUES (7, 'Kriti', 22, 'HP', 7500.00 );
+
+-- ACTUALIZANDO DESPUES DE CREAR EL TRIGGER
+UPDATE customers 
+SET salary = salary + 500 
+WHERE i_d = 2; 

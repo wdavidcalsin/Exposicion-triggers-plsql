@@ -1,0 +1,16 @@
+-- CREADO EN PDB3 USUARIO una1
+-- LINK: https://www.tutorialesprogramacionya.com/oracleya/simulador/simulador.php?inicio=100&cod=273&punto=115
+
+create table empleados(
+  documento char(8) not null,
+  nombre varchar2(30) not null,
+  domicilio varchar2(30),
+  seccion varchar2(20)
+ );
+
+ create table controlCambios(
+  usuario varchar2(30),
+  fecha date,
+  datoanterior varchar2(30),
+  datonuevo varchar2(30)
+ );
